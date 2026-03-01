@@ -17,3 +17,11 @@ print(df["country"].value_counts().head(10))
 
 print("\n========== MOST COMMON GENRES ==========")
 print(df["listed_in"].value_counts().head(10))
+print("\n========== MISSING VALUES ==========")
+print(df.isnull().sum())
+
+# Fill missing country values
+df["country"].fillna("Unknown", inplace=True)
+
+print("\nMissing values after cleaning:")
+print(df.isnull().sum())
